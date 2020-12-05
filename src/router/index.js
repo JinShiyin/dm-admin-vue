@@ -8,6 +8,7 @@ const _import = require('./_import_' + process.env.NODE_ENV);
 import StyleTransfer from '../views/sast/index'
 import Annotator from '../views/Annotator'
 import PageNotFound from "../views/PageNotFound";
+import ResultShow from "../views/ResultShow/index"
 
 
 Vue.use(Router);
@@ -24,12 +25,17 @@ export const constantRouterMap = [
   // {path: '/register', component: _import('register/index'), hidden: true},
   {
     path: '/',
-    redirect: '/sast'
+    redirect: '/ResultShow'
   },
   {
     path: '/sast',
     component: StyleTransfer,
     name: 'sast'
+  },
+  {
+    path: '/ResultShow',
+    component: ResultShow,
+    name: 'ResultShow'
   },
   {
     path: '/annotate/:identifier',

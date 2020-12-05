@@ -19,6 +19,17 @@ import NProgress from 'nprogress'
 NProgress.configure({showSpinner: false})// NProgress Configuration
 import VueTouch from 'vue-touch'
 import Viewer from 'v-viewer'
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+
+import Element from 'element-ui';
+Vue.use(Element, { size: 'large', zIndex: 3000 });
+
+// 用于和后台交互，发送请求
+import axios from 'axios';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+Vue.prototype.$axios = axios;
 
 
 import "bootstrap";
